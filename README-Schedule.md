@@ -21,4 +21,6 @@
     1. [Hololens的step by step教程](https://developer.microsoft.com/en-us/windows/mixed-reality/academy)
     2. [Hololens HelloWorld](http://hololenshelpwebsite.com/Blog/EntryId/1006/HoloLens-Hello-World)
     3. [HoloLens SDK开发(Unity3d+VS2015+HoloLens Emulator)，项目配置](http://lib.csdn.net/article/unity3d/36869)
-    
+   
+## 04.20~04.26 - Exam Week (very important!)
+这段时间是
