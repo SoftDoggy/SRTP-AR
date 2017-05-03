@@ -71,9 +71,23 @@
                 </div>
 
                 <br/>
-
+<?php
+$servername = "localhost";
+// 创建连接
+$conn = new mysqli($servername, "root", "10idccom","test");
+ 
+// 检测连接
+if (!$conn) {
+    die('数据库连接失败: ' . mysqli_error());
+} 
+//echo '连接成功';
+$sql = 'select * from objectname';
+$result = mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+mysqli_close($conn);
+?>
                 <div class="col-sm-6 col-md-6 col-lg-6">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control" value="<?php echo $row['name']; ?>">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -82,7 +96,7 @@
             <div class="row">
                 <!-- <div class="col-md-2"></div> -->
                 <div class="col-md-8">
-                  <iframe src="https://en.wikipedia.org/wiki/Water_bottle" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
+                  <iframe src="<?php echo 'https://en.wikipedia.org/wiki/'.$row['name']; ?>" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
                 </div>
                 <div class="col-md-2"></div>
             </div>

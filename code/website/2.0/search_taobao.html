@@ -71,9 +71,23 @@
                 </div>
 
                 <br/>
-
+<?php
+$servername = "localhost";
+// 创建连接
+$conn = new mysqli($servername, "root", "10idccom","test");
+ 
+// 检测连接
+if (!$conn) {
+    die('数据库连接失败: ' . mysqli_error());
+} 
+//echo '连接成功';
+$sql = 'select * from objectname';
+$result = mysqli_query($conn,$sql);
+$row=mysqli_fetch_assoc($result);
+mysqli_close($conn);
+?>
                 <div class="col-sm-6 col-md-6 col-lg-6">
-                  <input type="text" class="form-control">
+                  <input type="text" class="form-control"  value="<?php echo $row['name']; ?>">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -82,7 +96,8 @@
             <div class="row">
                 <!-- <div class="col-md-2"></div> -->
                 <div class="col-md-8">
-                  <iframe src="https://s.taobao.com/search?initiative_id=tbindexz_20170503&ie=utf8&spm=a21bo.50862.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q=water+bottle&suggest=0_1&_input_charset=utf-8&wq=water+b&suggest_query=water+b&source=suggest" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
+
+                  <iframe src="<?php echo 'https://s.taobao.com/search?initiative_id=tbindexz_20170503&ie=utf8&spm=a21bo.50862.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q='.$row["name"].'&suggest=0_1&_input_charset=utf-8&wq=water+b&suggest_query=water+b&source=suggest' ?>" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
                 </div>
                 <div class="col-md-2"></div>
             </div>
