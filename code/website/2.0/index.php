@@ -55,8 +55,8 @@ mysqli_close($conn);
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="search_wiki.html">Wiki</a></li>
-                  <li><a href="search_taobao.html">Goods</a></li>
+                  <li><a href="search_wiki.php">Wiki</a></li>
+                  <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
               </nav>
             </div>

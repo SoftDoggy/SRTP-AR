@@ -44,8 +44,8 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="search_wiki.html">Wiki</a></li>
-                  <li class="active"><a href="search_taobao.html">Goods</a></li>
+                  <li class="active"><a href="search_wiki.php">Wiki</a></li>
+                  <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
               </nav>
             </div>
@@ -65,7 +65,7 @@
               <!--   <div class="col-md-12"></div>
             <div class="col-md-2"></div> -->
                 <div class="col-sm-2 col-md-2 col-lg-2">
-                  <img src="img/taobao.png" width="100">
+                  <img src="img/wiki.png" width="80">
                 </div>
                 <div class="col-sm-2 col-md-2 col-lg-2">
                 </div>
@@ -87,7 +87,7 @@ $row=mysqli_fetch_assoc($result);
 mysqli_close($conn);
 ?>
                 <div class="col-sm-6 col-md-6 col-lg-6">
-                  <input type="text" class="form-control"  value="<?php echo $row['name']; ?>">
+                  <input type="text" class="form-control" value="<?php echo $row['name']; ?>">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -96,8 +96,7 @@ mysqli_close($conn);
             <div class="row">
                 <!-- <div class="col-md-2"></div> -->
                 <div class="col-md-8">
-
-                  <iframe src="<?php echo 'https://s.taobao.com/search?initiative_id=tbindexz_20170503&ie=utf8&spm=a21bo.50862.201856-taobao-item.2&sourceId=tb.index&search_type=item&ssid=s5-e&commend=all&imgfile=&q='.$row["name"].'&suggest=0_1&_input_charset=utf-8&wq=water+b&suggest_query=water+b&source=suggest' ?>" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
+                  <iframe src="<?php echo 'https://en.wikipedia.org/wiki/'.$row['name']; ?>" name="ifraRight" id="ifraRight" src="Main.aspx" frameborder="1"  scrolling="yes" width=600 height=350 ></iframe>
                 </div>
                 <div class="col-md-2"></div>
             </div>
