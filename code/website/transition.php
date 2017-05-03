@@ -3,7 +3,7 @@
 <?php
 $servername = "localhost";
 // 创建连接
-$conn = new mysqli($servername, "root", "","test"); 
+$conn = new mysqli($servername, "root", "10idccom","test"); 
 // 检测连接
 if (!$conn) {
     die('数据库连接失败: ' . mysqli_error());
