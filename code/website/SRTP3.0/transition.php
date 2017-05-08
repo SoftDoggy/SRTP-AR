@@ -74,8 +74,8 @@ mysqli_close($conn);
               <h3 class="masthead-brand">SRTP-AR</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="index.php">Home</a></li>
-                  <li><a href="recognition.php">Recognization</a></li>
+                  <li><a href="index.php">Home</a></li>
+                  <li class="active"><a href="recognition.php">Recognization</a></li>
                   <li><a href="search_wiki.php">Wiki</a></li>
                   <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
