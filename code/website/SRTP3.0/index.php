@@ -16,6 +16,7 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="../../assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 
     <!-- Custom styles for this template -->
     <link href="css/cover.css" rel="stylesheet">
@@ -64,7 +65,7 @@ mysqli_close($conn);
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="index.php">Home</a></li>
-                  <li><a href="recognition.php">Recognition</a></li>
+                  <li><a href="recognition.php">Recognization</a></li>
                   <li><a href="search_wiki.php">Wiki</a></li>
                   <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
@@ -95,7 +96,7 @@ mysqli_close($conn);
                   
 				      </form>
 
-	            <br/>
+	        
 	            <br/>
 	            <p class="myp">This is a simple UWP APP. </p>
 	            <p class="myp">It is aiming at transfering infomation bewteen Hololens and PC.</p>
@@ -107,11 +108,16 @@ mysqli_close($conn);
             <p class="inner" align="center">
               © 2017 SRTP-AR  &nbsp <a href="https://gitlab.com/Yifang_Wang/SRTP-AR">Watch us on Gitlab </a>, by sunshinepursuer
             </p>
-          </div>
-
+        </div>
       </div>
-
     </div>
+
+    <script type="text/javascript">
+      // var sentance = 'Please put the result of recognition below: '; 
+      // var speakresult = new SpeechSynthesisUtterance(sentance);
+      // window.speechSynthesis.speak(speakresult);
+      responsiveVoice.speak("Welcome to the SRTP Augmented Reality Project. This is a simple UWP APP.", "US English Female");
+    </script>
 
 </body>
 </html>

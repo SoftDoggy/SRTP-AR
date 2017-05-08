@@ -23,6 +23,7 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -32,21 +33,25 @@
   </head>
 
   <body>
-   <div class="masthead clearfix site-wrapper cover-container">
+   <div class="site-wrapper">
+
+           <div class="masthead clearfix">
             <div class="inner">
               <h3 class="masthead-brand">SRTP-AR</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="recognition.php">Recognition</a></li>
+                  <li><a href="recognition.php">Recognization</a></li>
                   <li class="active"><a href="search_wiki.php">Wiki</a></li>
                   <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
               </nav>
             </div>
-    </div>
-    <div class="site-wrapper">
-      <div id="document" class="site-wrapper-inner">
+         </div>
+
+
+    <!-- <div class="site-wrapper"> -->
+      <div class="site-wrapper-inner">
         <div class="cover-container">
 
           <br/>
@@ -83,7 +88,7 @@ $row=mysqli_fetch_assoc($result);
 mysqli_close($conn);
 ?>
                 <div class="col-sm-6 col-md-6 col-lg-6">
-                  <input type="text" class="form-control" value="<?php echo $row['name']; ?>">
+                  <input id="result" type="text" class="form-control" value="<?php echo $row['name']; ?>">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -110,6 +115,14 @@ mysqli_close($conn);
 
     </div>
 
+    <script type="text/javascript">
+      // var sentance = 'Here are some commodities related to the '; 
+      var result = document.getElementById("result").value
+      // var speakresult = new SpeechSynthesisUtterance(sentance+result);
+      // window.speechSynthesis.speak(speakresult);
+      responsiveVoice.speak("Here is the Wiki page of  "+result+", you can get some basic concepts about it.", "US English Female");
+    </script>
+
 
     <script type="text/javascript">
         $(document).ready(function(){
@@ -134,6 +147,13 @@ mysqli_close($conn);
         });
 
     </script>
+
+    <!-- <script type="text/javascript">
+      var sentance = 'This is the Wiki page of '; 
+      var result = document.getElementById("result").textContent
+      var speakresult = new SpeechSynthesisUtterance(sentance+result);
+      window.speechSynthesis.speak(speakresult);
+    </script> -->
 
     
     <!-- Bootstrap core JavaScript

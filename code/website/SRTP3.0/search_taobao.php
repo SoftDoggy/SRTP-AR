@@ -23,6 +23,7 @@
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -41,7 +42,7 @@
               <nav>
                 <ul class="nav masthead-nav">
                   <li><a href="index.php">Home</a></li>
-                  <li><a href="recognition.php">Recognition</a></li>
+                  <li><a href="recognition.php">Recognization</a></li>
                   <li><a href="search_wiki.php">Wiki</a></li>
                   <li class="active"><a href="search_taobao.php">Goods</a></li>
                 </ul>
@@ -86,7 +87,7 @@ $row=mysqli_fetch_assoc($result);
 mysqli_close($conn);
 ?>
                 <div class="col-sm-6 col-md-6 col-lg-6">
-                  <input type="text" class="form-control"  value="<?php echo $row['name']; ?>">
+                  <input id="result" type="text" class="form-control"  value="<?php echo $row['name']; ?>">
                 </div>
                 <div class="col-md-2"></div>
             </div>
@@ -111,6 +112,15 @@ mysqli_close($conn);
       </div>
     </div>
 
+    <script type="text/javascript">
+      // var sentance = 'Here are some commodities related to the '; 
+      var result = document.getElementById("result").value
+      // var speakresult = new SpeechSynthesisUtterance(sentance+result);
+      // window.speechSynthesis.speak(speakresult);
+      responsiveVoice.speak("Here are some commodities related to the "+result+"   You can search for what you need here.", "US English Female");
+    </script>
+    
+
      <script type="text/javascript">
         $(document).ready(function(){
            // $("iframe").mouseenter(function(){
@@ -134,6 +144,8 @@ mysqli_close($conn);
         });
 
     </script>
+
+
 
 
     <!-- Bootstrap core JavaScript

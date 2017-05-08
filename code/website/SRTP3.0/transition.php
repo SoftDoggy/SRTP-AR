@@ -51,6 +51,15 @@ mysqli_close($conn);
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+     <style type="text/css">
+     .myp{
+      margin-bottom: 20px;
+      font-size: 16px;
+      font-weight: 200;
+      line-height: 1.4;
+     }
+      
+    </style>
 
 </head>
 <body>
@@ -65,30 +74,42 @@ mysqli_close($conn);
               <h3 class="masthead-brand">SRTP-AR</h3>
               <nav>
                 <ul class="nav masthead-nav">
-                  <li class="active"><a href="#">Home</a></li>
-                  <li><a href="search_wiki.html">Wiki</a></li>
-                  <li><a href="search_taobao.html">Goods</a></li>
+                  <li class="active"><a href="index.php">Home</a></li>
+                  <li><a href="recognition.php">Recognization</a></li>
+                  <li><a href="search_wiki.php">Wiki</a></li>
+                  <li><a href="search_taobao.php">Goods</a></li>
                 </ul>
               </nav>
             </div>
           </div>
           <div class="inner cover">   
-	            <h1 class="cover-heading" value="<?php echo $row['name']; ?>" >Recognition</h1>
+              <br/>
+              <br/>
+              <br/>
+              <br/>
 	            <br/>
-	            <br>
+              <br/>
 	            <form method="post" action="index.php">
-				<input type="text" value="<?php echo 'The object name is changed to '.$par.'.'; ?>" class="form-control"><br><br>
+        <div class="row">
+              <div class="col-sm-2 col-md-2 col-lg-2"></div>
+              <div class="col-sm-8 col-md-8 col-lg-8">
+                 <h3 class="cover-heading" style="font-size: 30px;" ><?php echo 'The object name is changed to '.$par.'.'; ?></h3>
+              </div>
+        </div>
+
+        <br/>
+        <br/>
 				<input type="submit" name="submit" value="return" class="btn btn-lg btn-default">
 				</form>
 	            <br/>
 	            <br/>
-	            <p class="lead">This is a simple UWP APP. </p>
-	            <p class="lead">It is aiming at transfering infomation bewteen Hololens and PC.</p>
+	            <p class="myp">This is a simple UWP APP. </p>
+              <p class="myp">It is aiming at transfering infomation bewteen Hololens and PC.</p>
           </div>
 
         </div>
 
-        <div class="mastfoot" align="center">
+          <div align="center" style="color: #999; color: rgba(255,255,255,.5);">
             <p class="inner" align="center">
               © 2017 SRTP-AR  &nbsp <a href="https://gitlab.com/Yifang_Wang/SRTP-AR">Watch us on Gitlab </a>, by sunshinepursuer
             </p>
